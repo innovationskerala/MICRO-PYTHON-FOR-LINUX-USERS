@@ -1,6 +1,5 @@
-STEP 1:
-Open terminal & Install ESP tool by using the command - 
-pip install esptool
+STEP 1:Open terminal & Install ESP tool by using the command - 
+pip install esptool #h2
 
 STEP 2: Eraise the alredy flashed firmware in the esp8266 board type - 
         esptool.py --port /dev/ttyUSB0 erase_flash
