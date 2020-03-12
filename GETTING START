@@ -1,3 +1,9 @@
 STEP 1:
-Install ESP tool by using the command - 
+Open terminal & Install ESP tool by using the command - 
 pip install esptool
+
+STEP 2 : Eraise the alredy flashed firmware in the esp8266 board type - 
+esptool.py --port /dev/ttyUSB0 erase_flash
+
+
+If you face an error like this " [Errno 13] Permission denied: '/dev/ttyUSB0' "
