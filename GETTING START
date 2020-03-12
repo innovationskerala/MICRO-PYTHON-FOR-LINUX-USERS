@@ -2,8 +2,38 @@ STEP 1:
 Open terminal & Install ESP tool by using the command - 
 pip install esptool
 
-STEP 2 : Eraise the alredy flashed firmware in the esp8266 board type - 
+STEP 2: Eraise the alredy flashed firmware in the esp8266 board type - 
 esptool.py --port /dev/ttyUSB0 erase_flash
 
 
-If you face an error like this " [Errno 13] Permission denied: '/dev/ttyUSB0' "
+If you face an error like this " [Errno 13] Permission denied: '/dev/ttyUSB0' " If not ignore
+ 
+ Type the command
+ 
+ sudo su
+ //type your password
+ cd /
+ cd dev
+ chown username ttyUSB0
+
+then ctrl -D to exit from the root
+
+
+
+STEP 3: Download the micropthon firmware from the website - https://micropython.org/downloadhttps://micropython.org/download
+          in this site download the  latest fiemware for esp8266
+
+STEP 4: Then go to the folde where the the download bin file of the fiwmware located then type
+        
+        esptool.py --port /dev/ttyUSB0 --baud 460800 write_flash --flash_size=detect 0 esp8266-20170108-v1.8.7.bin
+        
+        you need to change "esp8266-20170108-v1.8.7.bin" as the name of the downloaded file name
+        
+        For some boards with a particular FlashROM configuration (e.g. some variants of a NodeMCU board) you may need to use the following command to deploy the firmware (note the -fm dio option):
+        
+        esptool.py --port /dev/ttyUSB0 --baud 460800 write_flash --flash_size=detect -fm dio 0 esp8266-20170108-v1.8.7.bin
+        
+        you need to change "esp8266-20170108-v1.8.7.bin" as the name of the downloaded file name
+        
+        
+      
