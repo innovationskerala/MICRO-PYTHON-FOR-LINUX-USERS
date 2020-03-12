@@ -3,20 +3,21 @@ Open terminal & Install ESP tool by using the command -
 pip install esptool
 
 STEP 2: Eraise the alredy flashed firmware in the esp8266 board type - 
-esptool.py --port /dev/ttyUSB0 erase_flash
+        esptool.py --port /dev/ttyUSB0 erase_flash
 
 
-If you face an error like this " [Errno 13] Permission denied: '/dev/ttyUSB0' " If not ignore
+        If you face an error like this " [Errno 13] Permission denied: '/dev/ttyUSB0' " If not ignore
  
- Type the command
+        Type the command
  
- sudo su
- //type your password
- cd /
- cd dev
- chown username ttyUSB0
+        sudo su
+        //type your password
+        cd /
+        cd dev
+        chown username ttyUSB0
 
-then ctrl -D to exit from the root
+        then ctrl -D to exit from the root
+
 
 
 
@@ -36,4 +37,25 @@ STEP 4: Then go to the folde where the the download bin file of the fiwmware loc
         you need to change "esp8266-20170108-v1.8.7.bin" as the name of the downloaded file name
         
         
-      
+STEP 5: To get connection with esp8266 serially type
+         picocom /dev/ttyUSB0 -b115200
+         
+         if this shows the permission denied problem then
+         
+         sudo chmod 666 /dev/ttyUSB0
+         
+         
+STEP 6: If  you get connected to the board then type
+        
+        import esp
+        esp.check_fw()
+        
+        If it return True then the firmware is ok
+        
+STEP 7: Now onwards you can run your python codes in your microcontroller just hello world in python 
+        print("Hello World")
+        
+        OUTPUT
+        Hello World
+          
+
