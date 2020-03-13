@@ -1,4 +1,4 @@
-#Let's Get Started
+# Let's Get Started
 
 STEP 1:Open terminal & Install ESP tool by using the command - 
         pip install esptool 
