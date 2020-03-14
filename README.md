@@ -28,6 +28,9 @@ MicroPython is a tiny open source Python interpretor that runs on small embedded
 
 5. Connect to esp8266 serially  using
     `sudo picocom /dev/ttyUSB0 -b115200`
+    If you face any error FATAL: cannot open /dev/ttyUSB0: Permission denied like this plz type :
+    `sudo chmod 666 /dev/ttyUSB0`
+
 
 6. If  you get connected to the board then type
 
