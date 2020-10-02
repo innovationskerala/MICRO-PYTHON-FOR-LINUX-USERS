@@ -45,8 +45,8 @@ MicroPython is a tiny open source Python interpretor that runs on small embedded
 your microcontroller just hello world in python.
 
     ```python
-    print("Hello World")
+    print("Hello Worldd")
     ```
 
     Output:
-    `Hello World`
+    `Hello Worldd`
